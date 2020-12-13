@@ -1,8 +1,9 @@
 import pandas as pd
 import networkx as nx
+import sys
 
 df = pd.DataFrame({'from': [], 'to': []})
-sigs = input()
+sigs = sys.stdin.read()
 sigs = sigs.split("pub:")
 
 for specific_key in sigs:
