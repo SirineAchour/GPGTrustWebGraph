@@ -30,15 +30,15 @@ for specific_key in sigs:
             else:
                 pub_key_id = sig_id
     main_key_name = key_name + " (" + pub_key_id + ")"
-    from_list = []
+    to_list = []
     if sigs_in_total:
         for i in sigs_in_total:
-            from_list.append(main_key_name)
+            to_list.append(main_key_name)
     else:
         sigs_in_total = [main_key_name]
-        from_list.append(main_key_name)
+        to_list.append(main_key_name)
     # add it to the dataframe
-    df2 = pd.DataFrame({"from": from_list, "to": sigs_in_total})
+    df2 = pd.DataFrame({"from": sigs_in_total, "to": to_list})
     df = df.append(df2)
 
 # Graphing the whole thing
